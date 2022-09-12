@@ -1,7 +1,7 @@
 import random
-from bke import EveluationAgent, start
+from bke import EvaluationAgent, start
 
-class MyRandomAgent (EveluationAgent):
+class MyRandomAgent (EvaluationAgent):
   def evaluate (self, board, my_symbol, opponent_symbol) :
     return random.randint(1, 500)
 
