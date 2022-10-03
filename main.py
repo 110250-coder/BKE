@@ -1,6 +1,10 @@
 import random
  
-from bke import MLAgent, is_winner, opponent, RandomAgent, train_and_plot
+from bke import start, MLAgent, is_winner, opponent, RandomAgent, train_and_plot, EvaluationAgent
+
+class MyRandomAgent(EvaluationAgent):
+  def evaluate(self, board, y_symbol, opponent_symbol):
+    return random.randint(1, 500)
  
  
 class MyAgent(MLAgent):
@@ -14,7 +18,6 @@ class MyAgent(MLAgent):
         return reward
     
     
-random.seed(1)
 
 def plot1():
   class MyAgent(MLAgent):
