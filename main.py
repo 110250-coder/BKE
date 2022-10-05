@@ -26,7 +26,6 @@ def randomagent():
 
 def smartopponent():
   my_agent = MyAgent()
-  my_agent = load('MyAgent_3000')
   start(player_x=my_agent)
   
 
