@@ -16,13 +16,16 @@ class MyAgent(MLAgent):
         else:
             reward = 0
         return reward
-    
+
+
 def play():
   start()
+  draw_start()
 
 def randomagent():
   my_random_agent = MyRandomAgent()
   start(player_o=my_random_agent)
+  draw_start()
 
 
 
@@ -31,6 +34,7 @@ def onoverwinnelijk():
   my_agent = load('MyAgent_3000')
   my_agent.learning = False
   start(player_x=my_agent)
+  draw_start()
   
 def validation():
   my_agent = MyAgent(alpha=0.8, epsilon=0.2)
@@ -44,18 +48,24 @@ def validation():
       iterations=50,
       trainings=100,
       validations=1000)
+  draw_start()
 
-print("1. speel tegen een vriend")
-print("2. speel tegen een beginner")
-print("3. onoverwinnelijk")
-print("4. train en valideer")
-
-i = input()
-if i == "1":
-  play()
-elif i == "2":
-  randomagent()
-elif i == "3":
-  onoverwinnelijk()
-elif i == "4":
-  validation()
+def draw_start():
+  print(" ")
+  print("Boter Kaas & Eieren")
+  print(" ")
+  print("1. speel tegen een vriend")
+  print("2. speel tegen een beginner")
+  print("3. onoverwinnelijk")
+  print("4. train en valideer")
+  
+  i = input()
+  if i == "1":
+    play()
+  elif i == "2":
+    randomagent()
+  elif i == "3":
+    onoverwinnelijk()
+  elif i == "4":
+    validation()
+draw_start()
